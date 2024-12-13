@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Nospied!</h2>
+    <div id="box"></div>
+    <div class="log" id="log"></div>
+    <script>
+        const boxDiv = document.getElementById("box");
+        const logDiv = document.getElementById("log");
+
+        boxDiv.addEventListener("click", function(e) {
+            this.classList.toggle("active");
+            const logEntry = document.createElement("div");
+            logEntry.textContent = `Piespiests (function)`;
+            logEntry.className = "log-entry";
+            logDiv.appendChild(logEntry);
+        });
+
+        boxDiv.addEventListener("click", e => {
+            const logEntry = document.createElement("div");
+            logEntry.textContent = `Piespiests (arrow function)`;
+            logEntry.className = "log-entry";
+            logDiv.appendChild(logEntry);
+        });
+    </script>
+</body>
+</body>
+</html>
