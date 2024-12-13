@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="title">Virsraksts</h1>
+        <p id="description" data-info="info">Paragrāfs</p>
+        <ul id="list">
+            <li class="item">1</li>
+            <li class="item">2</li>
+        </ul>
+    </div>
+
+    <script>
+        const newItem = document.createElement("li");
+        newItem.textContent = "3";
+        const list = document.getElementById("list");
+        list.append(newItem);
+
+        const title = document.getElementById("title");
+        title.textContent = "Jauns virsraksts";
+
+        const description = document.getElementById("description");
+        description.innerHTML = "<strong>Atjaunots paragrāfs:</strong> !!!";
+
+        description.setAttribute("data-info", "informācija");
+        console.log(description.getAttribute("data-info"));
+
+        console.log(description.dataset.info);
+
+        title.classList.add("highlight");
+
+        title.style.backgroundColor = "yellow";
+    </script>
+</body>
+</html>
